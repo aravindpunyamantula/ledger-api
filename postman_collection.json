@@ -1,0 +1,122 @@
+{
+  "info": {
+    "name": "Ledger API",
+    "_postman_id": "85917c00-e692-481e-8c6b-5ef44756c0a2",
+    "description": "Postman collection for Financial Ledger API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Create Account",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"user_id\": 1,\n  \"account_type\": \"checking\",\n  \"currency\": \"INR\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/accounts",
+          "host": ["{{baseUrl}}"],
+          "path": ["accounts"]
+        }
+      }
+    },
+    {
+      "name": "Get Account By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/accounts/1",
+          "host": ["{{baseUrl}}"],
+          "path": ["accounts", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Account Ledger",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/accounts/1/ledger",
+          "host": ["{{baseUrl}}"],
+          "path": ["accounts", "1", "ledger"]
+        }
+      }
+    },
+    {
+      "name": "Deposit",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_id\": 1,\n  \"amount\": 1000,\n  \"currency\": \"INR\",\n  \"description\": \"Initial deposit\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/transactions/deposits",
+          "host": ["{{baseUrl}}"],
+          "path": ["transactions", "deposits"]
+        }
+      }
+    },
+    {
+      "name": "Withdrawal",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"account_id\": 1,\n  \"amount\": 400,\n  \"currency\": \"INR\",\n  \"description\": \"ATM cash\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/transactions/withdrawals",
+          "host": ["{{baseUrl}}"],
+          "path": ["transactions", "withdrawals"]
+        }
+      }
+    },
+    {
+      "name": "Transfer",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"from_account\": 1,\n  \"to_account\": 2,\n  \"amount\": 200,\n  \"currency\": \"INR\",\n  \"description\": \"Transfer to savings\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/transactions/transfers",
+          "host": ["{{baseUrl}}"],
+          "path": ["transactions", "transfers"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3000"
+    }
+  ]
+}
