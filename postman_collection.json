@@ -70,7 +70,7 @@
           "raw": "{\n  \"account_id\": 1,\n  \"amount\": 1000,\n  \"currency\": \"INR\",\n  \"description\": \"Initial deposit\"\n}"
         },
         "url": {
-          "raw": "{{baseUrl}}/transactions/deposits",
+          "raw": "{{baseUrl}}/deposits",
           "host": ["{{baseUrl}}"],
           "path": ["transactions", "deposits"]
         }
@@ -88,7 +88,7 @@
           "raw": "{\n  \"account_id\": 1,\n  \"amount\": 400,\n  \"currency\": \"INR\",\n  \"description\": \"ATM cash\"\n}"
         },
         "url": {
-          "raw": "{{baseUrl}}/transactions/withdrawals",
+          "raw": "{{baseUrl}}/withdrawals",
           "host": ["{{baseUrl}}"],
           "path": ["transactions", "withdrawals"]
         }
@@ -106,7 +106,7 @@
           "raw": "{\n  \"from_account\": 1,\n  \"to_account\": 2,\n  \"amount\": 200,\n  \"currency\": \"INR\",\n  \"description\": \"Transfer to savings\"\n}"
         },
         "url": {
-          "raw": "{{baseUrl}}/transactions/transfers",
+          "raw": "{{baseUrl}}/transfers",
           "host": ["{{baseUrl}}"],
           "path": ["transactions", "transfers"]
         }
